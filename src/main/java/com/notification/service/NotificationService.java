@@ -1,10 +1,12 @@
 package com.notification.service;
 
-import com.notification.model.request.PaymentRequest;
-import com.notification.model.request.UserRequest;
-import com.notification.model.response.UserResponse;
+import com.notification.model.request.NotificationByUserIdRequest;
+import com.notification.model.request.NotificationRequest;
+import com.notification.model.response.NotificationResponse;
 
 public interface NotificationService {
-    UserResponse userNotification(UserRequest userRequest);
-    UserResponse paymentNotification(PaymentRequest paymentRequest);
+    NotificationResponse processNotification(NotificationRequest notificationRequest);
+    NotificationResponse processNotification(NotificationByUserIdRequest notificationByUserIdRequest);
+
+
 }

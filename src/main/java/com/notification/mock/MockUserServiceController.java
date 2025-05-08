@@ -1,18 +1,14 @@
 package com.notification.mock;
 
-import com.notification.model.request.UserIdRequest;
 import com.notification.model.response.UserContactResponse;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/mock/users")
 public class MockUserServiceController {
 
-    @PostMapping("/getUserDetails")
-    public UserContactResponse getUserDetails(@RequestBody UserIdRequest request) {
+    @GetMapping("/getUserDetails/{userId}")
+    public UserContactResponse getUserDetails(@PathVariable Long userId) {
         UserContactResponse response = new UserContactResponse();
         response.setEmail("testuser@example.com");
         response.setPhoneNumber("+15551234567");

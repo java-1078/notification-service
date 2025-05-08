@@ -3,7 +3,6 @@ package com.notification.model.response;
 import lombok.Data;
 
 @Data
-public class UserResponse {
-    private String status;
+public class GreetingResponse {
     private String message;
 }
